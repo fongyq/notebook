@@ -16,6 +16,7 @@ homepage: true
   - `神雕侠侣`
 
     <img src="pictures/神雕侠侣.jpg" width="300" align=center />
+    ![神雕侠侣](pictures/神雕侠侣.jpg)
 
     1995古天乐版。
 
