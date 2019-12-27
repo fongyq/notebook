@@ -6,13 +6,28 @@ homepage: true
 
 # 学而时习之
 
+### `2019-12-27`
+> 欧拉数 $e$
+
+$$e = \sum_{n=0}^{+\infty} \frac{1}{n!} = \lim_{n \to +\infty} (1+\frac{1}{n})^n \approx 2.7183 $$
+
+- 假设银行一年复利为$r$，一年按$n$次计算复利，当$n \to +\infty$，一年的受益率为
+  
+  $$(1+\frac{r}{n})^n \approx e^r. $$
+
+- 对含$n$个样本的数据进行$n$次有放回均匀采样，当$n \to +\infty$，有
+
+  $$ (1-\frac{1}{n})^n \approx \frac{1}{e} \approx 36.8\% $$
+
+  的样本从未被选中。
+
 # 光影留声
 
 ## 影
 > 我觉得好看就行，不在乎别人的评价
 
 - **电视剧**
-
+  
   - `神雕侠侣 1995`
 
     <img src="pictures/神雕侠侣.jpg" width="250" />
