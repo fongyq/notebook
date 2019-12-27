@@ -16,14 +16,14 @@ homepage: true
   - `神雕侠侣`
 
     <img src="pictures/神雕侠侣.jpg" width="300" />
-    
-    ![神雕侠侣](pictures/神雕侠侣.jpg)
 
     1995古天乐版。
 
     亦正亦邪的杨过。
 
   - `齐天大圣`
+
+    <img src="pictures/齐天大圣.jpg" width="300" />
 
     1996张卫健版西游记。
 
@@ -32,6 +32,8 @@ homepage: true
     印象很深的是三打白骨精那集，悟空分身向师父跪拜。
 
   - `西游记2`
+
+    <img src="pictures/西游记.jpg" width="300" />
 
     1998陈浩民版。
 
