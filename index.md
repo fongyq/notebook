@@ -15,7 +15,7 @@ homepage: true
 
   - `神雕侠侣`
 
-    <img src="pictures/神雕侠侣.jpg" width="300" />
+    <img src="pictures/神雕侠侣.jpg" width="250" />
 
     1995古天乐版。
 
@@ -23,7 +23,7 @@ homepage: true
 
   - `齐天大圣`
 
-    <img src="pictures/齐天大圣.jpg" width="300" />
+    <img src="pictures/齐天大圣.jpg" width="250" />
 
     1996张卫健版西游记。
 
@@ -33,7 +33,7 @@ homepage: true
 
   - `西游记2`
 
-    <img src="pictures/西游记.jpg" width="300" />
+    <img src="pictures/西游记.jpg" width="250" />
 
     1998陈浩民版。
 
@@ -41,17 +41,23 @@ homepage: true
   
   - `水浒传`
 
+    <img src="pictures/水浒传.jpg" width="250" />
+
     1998央视版。
 
     李雪健老师演得非常好，浔阳楼题反诗，一镜到底；王思懿很漂亮。
 
   - `上错花轿嫁对郎`
 
+    <img src="pictures/上错花轿嫁对郎.jpg" width="250" />
+
     2001。
 
     杜冰雁惊艳！
 
   - `寻秦记`
+
+    <img src="pictures/寻秦记.jpg" width="250" />
 
     2001。
 
@@ -61,17 +67,23 @@ homepage: true
 
   - `天下第一`
 
+    <img src="pictures/天下第一.jpg" width="250" />
+
     2005。
 
     海棠很漂亮，飘絮很漂亮，雪姬很漂亮。。。
 
   - `亮剑`
 
+    <img src="pictures/亮剑.jpg" width="250" />
+
     2005。
 
     狭路相逢勇者胜。
 
   - `闯关东`
+
+    <img src="pictures/闯关东.jpg" width="250" />
 
     2008。
 
@@ -81,6 +93,8 @@ homepage: true
 
   - `A计划`
 
+    <img src="pictures/A计划.jpg" width="250" />
+
     1983。
     
     “胖子，你很面熟啊。”
@@ -89,11 +103,15 @@ homepage: true
 
   - `警察故事系列`
 
+    <img src="pictures/警察故事.jpg" width="250" />
+
     1985。
 
     龙叔一直都很拼。
 
   - `英雄本色系列`
+
+    <img src="pictures/英雄本色.jpg" width="250" />
 
     1986。
 
@@ -101,11 +119,15 @@ homepage: true
 
   - `倩女幽魂系列`
 
+    <img src="pictures/倩女幽魂.jpg" width="250" />
+
     1987。
 
     把恐怖片拍成喜剧。
 
   - `黄飞鸿系列`
+
+    <img src="pictures/黄飞鸿.jpg" width="250" />
 
     1991。
 
@@ -113,11 +135,15 @@ homepage: true
 
   - `都市情缘`
 
+    <img src="pictures/都市情缘.jpg" width="250" />
+
     1994。
 
     剧情很感人。（黎明太帅了！）
 
   - `大话西游`
+
+    <img src="pictures/大话西游.jpg" width="250" />
 
     1995。
 
@@ -125,11 +151,15 @@ homepage: true
 
   - `蜀山传`
 
+    <img src="pictures/蜀山传.jpg" width="250" />
+
     2001。
 
     郑伊健、张柏芝、古天乐、章子怡、吴京、林熙蕾 ... 高颜值。
 
   - `无间道系列`
+
+    <img src="pictures/无间道.jpg" width="250" />
 
     2002。
 
@@ -141,11 +171,15 @@ homepage: true
 
   - `天下无双`
 
+    <img src="pictures/天下无双.jpg" width="250" />
+
     2002。
 
     开头黄梅调的天仙配，很喜庆（过年时候看的）。
 
   - `寒战系列`
+
+    <img src="pictures/寒战.jpg" width="250" />
 
     2012。
 
