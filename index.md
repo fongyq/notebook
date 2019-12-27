@@ -15,6 +15,8 @@ homepage: true
 
   - `神雕侠侣`
 
+    <img src="pictures/神雕侠侣.jpg" width="300" align=center />
+
     1995古天乐版。
 
     亦正亦邪的杨过。
@@ -58,6 +60,12 @@ homepage: true
     2005。
 
     海棠很漂亮，飘絮很漂亮，雪姬很漂亮。。。
+
+  - `亮剑`
+
+    2005。
+
+    狭路相逢勇者胜。
 
   - `闯关东`
 
