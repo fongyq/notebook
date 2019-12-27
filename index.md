@@ -1,7 +1,3 @@
----
-layout: page
-homepage: true
----
 
 <head>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
@@ -14,6 +10,11 @@ homepage: true
         });
     </script>
 </head>
+
+---
+layout: page
+homepage: true
+---
 
 
 # 学而时习之
