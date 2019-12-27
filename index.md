@@ -11,7 +11,7 @@ homepage: true
 
 $$e = \sum_{n=0}^{+\infty} \frac{1}{n!} = \lim_{n \to +\infty} (1+\frac{1}{n})^n \approx 2.7183 $$
 
-- 假设银行一年复利为$r$，一年按$n$次计算复利，当$n \to +\infty$，一年的受益率为
+- 假设银行一年复利为$r$，一年按$n$次计算复利，每次利率为$\frac{r}{n}$，当$n \to +\infty$，一年的收益率为
   
   $$(1+\frac{r}{n})^n \approx e^r. $$
 
