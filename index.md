@@ -17,8 +17,6 @@ homepage: true
 
     <img src="pictures/神雕侠侣.jpg" width="250" />
 
-    <font size=13 >13号字</font>
-
     1995古天乐版。
 
     亦正亦邪的杨过。
