@@ -19,7 +19,7 @@ homepage: true
 # 学而时习之
 
 ### `2019-12-27`
-> 欧拉数 $e$
+> 欧$\color{#00A}{\mit{gagdag}}$数 $e$
 
 $$e = \sum_{n=0}^{+\infty} \frac{1}{n!} = \lim_{n \to +\infty} (1+\frac{1}{n})^n \approx 2.7183 $$
 
