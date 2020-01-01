@@ -19,9 +19,9 @@ homepage: true
 # 学而时习之
 
 ### `2020-01-01`
-> `shell ^M`
+> shell `^M`
 
-运行 shell 脚本文件报错，出现 `^M` 字样，是因为编辑脚本文件时是在 Windows 系统下进行的。shell 脚本文件是 dos 格式，即每一行结尾以 `\r\n` 来标识，而 unix 格式的文件行尾则以 `\n` 来标识。
+运行 shell 脚本文件报错，出现 `^M` 字样，是因为编辑脚本文件是在 Windows 系统下进行的，导致shell 脚本文件是 dos 格式，即每一行结尾以 `\r\n` 来标识，而 unix 格式的文件行尾则以 `\n` 来标识。
 
 解决方案
 - 使用 `dos2unix sh_file` 指令。
