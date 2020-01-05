@@ -18,6 +18,33 @@ homepage: true
 
 # 学而时习之
 
+### `2020-01-05`
+> python `os.walk`
+
+```python
+os.walk(top, topdown=True, onerror=None, followlinks=False)
+```
+
+`os.walk`是目录树生成（directory tree generator）函数，通过在目录树中游走输出 `top` 目录下的所有目录及文件；返回一个生成器，每一个元素是一个三元组：(root, dirs, files)，类型是 (string, list, list)。
+
+```
+root
+├── a.txt
+├── b.txt
+└── fa
+    ├── aa.txt
+    ├── ab.txt
+    └── faa
+        └── aaa.txt
+```
+
+以上目录树返回的结果转换成 list 之后是：
+```
+[('root', ['fa'], ['a.txt', 'b.txt']), 
+('root/fa', ['faa'], ['aa.txt', 'ab.txt']), 
+('root/fa/faa', [], ['aaa.txt'])]
+```
+
 ### `2020-01-01`
 > shell `^M`
 
