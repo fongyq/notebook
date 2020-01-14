@@ -23,7 +23,7 @@ homepage: true
 
 `HSL`和`HSV`都是一种将`RGB`色彩模型中的点在圆柱坐标系中的表示法。这两种表示法试图做到比基于笛卡尔坐标系的几何结构`RGB`更加**直观**。
 
-`HSL`即色相、饱和度、亮度（Hue, Saturation, Lightness），又称HSI（Hue, Saturation, Intensity）。这三个维度是相互独立的，而`RGB`三个维度不是独立的。
+`HSL`即色相、饱和度、亮度（Hue, Saturation, Lightness），又称`HSI`（Hue, Saturation, Intensity）。这三个维度是相互独立的，而`RGB`三个维度不是独立的。
 
 `HSV`即色相、饱和度、明度（Hue, Saturation, Value），又称`HSB`（Hue, Saturation, Brightness）。
 
@@ -39,9 +39,7 @@ homepage: true
 - `HSV` 的 S（饱和度）控制纯色中混入白色的量，越往右，值越大，白色越少，颜色纯度越高。
 - `HSL` 的 L（亮度），从下至上，混入的黑色逐渐减少，直到 50% 位置处完全没有黑色，也没有白色，纯度达到最高；继续往上，纯色混入的白色逐渐增加，到达最高点变为纯白色，明度最高。
 
-应用
-- Photoshop颜色选择器采用`HSV`。
-- Windows操作系统颜色选择器采用`HSL`。
+- Photoshop颜色选择器采用`HSV`；Windows操作系统颜色选择器采用`HSL`。
 
 ### `2020-01-09`
 > HTTP协议常见代码
