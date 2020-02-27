@@ -19,6 +19,41 @@ homepage: true
 # 学而时习之
 
 ### `2020-02-27`
+> python h5py
+
+h5py文件是存放两类对象的容器：数据集（dataset）和组（group）。dataset是数据项；group是像文件夹一样的容器，类似于字典，有键和值；group中可以存放dataset或者其他group。
+
+```python
+import numpy as np
+import h5py
+fw = h5py.File("test.hdf5", 'w')
+
+g = fw.create_group("grp")
+d = fw.create_dataset("dst", data=np.random.random([3,5]))
+
+g_sub = g.create_group("grp-sub")
+g["grp-dst"] = 5
+
+print(fw.keys())
+# <KeysViewHDF5 ['dst', 'grp']>
+print(fw['dst'][()]) ## value
+print(g['grp-sub'].name)
+# /grp/grp-sub
+print(g['grp-dst'].shape, g['grp-dst'].dtype, g["grp-dst"][()])
+# () int32 5
+
+fw.close()
+```
+
+```
+fw
+├── dst
+└── grp
+    ├── grp-dst
+    └── grp-sub
+```
+
+### `2020-02-27`
 > python缓存装饰器：lru_cache
 
 LRU，即Least Recently Used，最近最少使用，是一种常用的页面置换算法，选择最近最久未使用的页面予以淘汰。
