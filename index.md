@@ -18,6 +18,24 @@ homepage: true
 
 # 学而时习之
 
+### `2020-02-27`
+> python缓存装饰器：lru_cache
+
+LRU，即Least Recently Used，最近最少使用，是一种常用的页面置换算法，选择最近最久未使用的页面予以淘汰。
+
+`lru_cache`根据参数缓存每次函数调用结果，对于相同参数的，无需重新函数计算，直接返回之前缓存的返回值。`maxsize`指定了缓存的长度，`typed=True`则不同类型的函数参数将单独缓存，例如，f(3)和f(3.0)将视为不同的调用。
+
+```python
+import functools
+
+@functools.lru_cache(maxsize=128, typed=False)
+def fibonacci(n:int) -> int:
+    if n == 0: return 0
+    elif n == 1: return 1
+    elif n > 1: 
+        return fibonacci(n-2) + fibonacci(n-1)
+```
+
 ### `2020-01-14`
 > `HSL`和`HSV`色彩空间
 
