@@ -18,10 +18,40 @@ homepage: true
 
 # 学而时习之
 
+### `2020-02-29`
+> python vars
+
+`vars`函数返回对象的属性和属性值对应的字典对象。
+
+```python
+class Info(object):
+    def __init__(self, age, sex):
+        self.age = age
+        self.sex = sex
+
+class User(object):
+    def __init__(self, name, info):
+        self.name = name
+        self.info = info
+
+info = Info(25, 'man')
+print(vars(info))
+print(vars(User('fong', info)))
+print(vars(User('fong', vars(info))))
+```
+
+```
+{'age': 25, 'sex': 'man'}
+{'name': 'fong', 'info': <__main__.Info object at 0x000001987824A490>}
+{'name': 'fong', 'info': {'age': 25, 'sex': 'man'}}
+```
+
+注意最后两行的差异，正确的初始化应该使用`vars`以匹配`**kwargs`字典参数。
+
 ### `2020-02-27`
 > python h5py
 
-h5py文件是存放两类对象的容器：数据集（dataset）和组（group）。dataset是数据项；group是像文件夹一样的容器，类似于字典，有键和值；group中可以存放dataset或者其他group。
+h5py文件是存放两类对象的容器：dataset和group。dataset是数据项；group是像文件夹一样的容器，类似于字典，有键和值；group中可以存放dataset或者其他group。
 
 ```python
 import numpy as np
