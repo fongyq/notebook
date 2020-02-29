@@ -19,7 +19,7 @@ homepage: true
 # 学而时习之
 
 ### `2020-02-29`
-> python vars
+> python `vars`
 
 `vars`函数返回对象的属性和属性值对应的字典对象。
 
@@ -49,7 +49,7 @@ print(vars(User('fong', vars(info))))
 注意最后两行的差异，正确的初始化应该使用`vars`以匹配`**kwargs`字典参数。
 
 ### `2020-02-27`
-> python h5py
+> python `h5py`
 
 h5py文件是存放两类对象的容器：dataset和group。dataset是数据项；group是像文件夹一样的容器，类似于字典，有键和值；group中可以存放dataset或者其他group。
 
@@ -84,7 +84,7 @@ fw
 ```
 
 ### `2020-02-27`
-> python缓存装饰器：lru_cache
+> python缓存装饰器：`lru_cache`
 
 LRU，即Least Recently Used，最近最少使用，是一种常用的页面置换算法，选择最近最久未使用的页面予以淘汰。
 
