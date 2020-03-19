@@ -18,6 +18,49 @@ homepage: true
 
 # 学而时习之
 
+### `2020-03-19`
+> python `isinstance`
+
+`isinstance(object, classinfo)` 函数来判断一个对象是否是一个已知的类型，`classinfo`可以是元组。`isinstance()` 会认为子类是一种父类类型，考虑继承关系，而 `type()`不考虑继承。
+
+```python
+>>> a = 2
+>>> isinstance(a, (int, str))
+True
+>>> class A(object):
+...     pass
+...
+>>> class B(A):
+...     pass
+...
+>>> b = B()
+>>> isinstance(b, A)
+True
+>>> type(b) == A
+False
+```
+
+> python `zip`
+
+`zip([iterable, ...])` 将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表。
+
+利用`*`号操作符，可以将元组解压为列表。
+
+```python
+>>> a = [1,2,3]
+>>> b = [5,6,7,8]
+>>> zipped = zip(a, b)
+>>> zipped
+<zip object at 0x7fde6fa9f780>
+>>> list(zipped)
+[(1, 5), (2, 6), (3, 7)]
+>>> list(zipped) ## 只能取一次值
+[]
+>>> unzipped = zip(*list(zipped))
+>>> list(unzipped)
+[(1, 2, 3), (5, 6, 7)]
+```
+
 ### `2020-03-09`
 > 进程和线程
 
