@@ -18,6 +18,98 @@ homepage: true
 
 # 学而时习之
 
+### `2020-08-08`
+> python `pickle`
+
+pickle模块实现了用于序列化和反序列化Python对象结构的二进制协议。pickle模块只能在Python中使用，几乎所有的数据类型（列表、字典、集合、类等）都可以用pickle来序列化，以二进制的形式序列化后保存到文件中（.pkl），不能直接打开进行预览。
+
+以下函数基于Python 3.8。
+
+- `pickle.dump(obj, file, protocol=None, *, fix_imports=True, buffer_callback=None)`
+
+  将数据序列化后存入文件。
+
+- `pickle.load(file, *, fix_imports=True, encoding="ASCII", errors="strict", buffers=None)`
+
+  将文件的内容反序列化读出，此时要让Python能够找到数据对应的类的定义。
+
+- `pickle.dumps(obj, protocol=None, *, fix_imports=True, buffer_callback=None)`
+
+  将对象序列化为bytes形式，而不是存入文件。
+
+- `pickle.loads(data, *, fix_imports=True, encoding="ASCII", errors="strict", buffers=None)`
+
+  从bytes中读取序列化前的对象。
+
+> python `bytes`
+
+bytes以字节序列的形式（二进制形式）存储数据，不关心数据的具体形式（字符串、图像、视频）和内容。
+
+通过encode和decode，bytes和字符串可以相互转换。
+
+```python
+>>> bytes("hello world", encoding="utf8")
+b'hello world'
+>>> "hello world".encode("utf8")
+b'hello world'
+>>> "hello world".encode("utf8").decode("utf8")
+'hello world'
+
+>>> a = bytes("hello world", encoding="utf8")
+>>> a[0]         
+104              
+>>> a[1]         
+101              
+>>> len(a)       
+11               
+>>> a[:5]        
+b'hello'             
+>>> type(a)      
+<class 'bytes'>  
+```
+
+> 协同过滤
+
+协同过滤（Collaborative Filtering）是一种在推荐系统中广泛使用的技术。该技术通过分析**用户**或者**事物**之间的相似性（“协同”），来预测用户可能感兴趣的内容并将其推荐给用户。这里的相似性可以是人口特征（性别、年龄、居住地等）的相似性，也可以是历史浏览内容的相似性（比如都关注过和中餐相关的内容）等。比如，用户A和B都是居住在北京的年龄在20-30岁的女性，并且都关注过化妆品和衣物相关的内容，这种情况下，协同过滤可能会认为A和B相似程度很高，于是可能会把A关注但B没有关注的内容推荐给B，反之亦然。
+
+- 基于存量（Memory-based）的协同过滤
+  - 基于用户（User-based）的协同过滤
+
+    - 收集用户信息。
+    
+    - 最近邻搜索(Nearest neighbor search, NNS)，计算用户之间的相似度。
+
+    - 产生推荐结果。例如：透过对A用户的最近邻用户进行统计，选择出现频率高且在A用户的评分项目中不存在的推荐给A。
+
+  - 基于项目（Item-based）的协同过滤
+    
+    基本假设：能够引起用户兴趣的项目，必定与其之前评分高的项目相似。
+
+    - 收集用户信息。
+
+    - 针对项目的最近邻搜索，计算项目之间的相似度。
+
+    - 产生推荐结果。由于未考虑用户间的差别，所以精度比较差。但是却不需要用户的历史数据，或是进行用户识别。对于项目来讲，它们之间的相似性要稳定很多，因此可以离线完成工作量最大的相似性计算步骤，从而降低了在线计算量，提高推荐效率。
+
+- 基于模型（Model-based）的协同过滤
+  
+  以存量为基础（Memory-based）的协同过滤的缺点是数据稀疏，难以处理大数据量，这会影响即时结果。以模型为基础的协同过滤是先用历史数据得到一个模型，再用此模型进行预测。
+
+- 优点
+
+  推荐个性化、自动化程度高，能够有效的利用其他相似用户的反馈信息，加快个性化学习的速度。
+
+- 缺点
+
+  新用户问题(New User Problem)，系统开始时推荐质量较差；新项目问题(New Item Problem)，质量取决于历史数据集；稀疏性问题（Sparsity）；系统扩展性问题（Scalability）。
+
+### `2020-06-01`
+> F12
+
+在网页按F12，点击箭头可选择网页内容进行编辑，但是每次编辑都要用箭头重新选择。在console输入：`document.body.contentEditable="true"`就可以对任意内容进行编辑了。
+
+F12可以用来查找网页中图片、视频的下载地址。
+
 ### `2020-03-19`
 > python `isinstance`
 
@@ -549,6 +641,8 @@ $$e = \sum_{n=0}^{+\infty} \frac{1}{n!} = \lim_{n \to +\infty} (1+\frac{1}{n})^n
 # 行云流水
 
 ## 2020
+
+`2020-07-26` 入职。
 
 `2020-06-28` 再见，科大。
 
