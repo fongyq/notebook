@@ -18,6 +18,49 @@ homepage: true
 
 # 学而时习之
 
+### `2020-08-11`
+> 分卷压缩
+
+- **rar**
+
+  - 压缩，每个分卷最大为50MB。
+    ```bash
+    rar a -v50m out.rar oxf.mat
+    ```
+
+  - 解压
+    ```bash
+    unrar x out.part1.rar
+    ```
+
+- **zip**
+
+  - 压缩，每个分卷最大为50MB。
+      ```bash
+      zip out.zip oxf.mat
+      zip -s 50m out.zip --out partout
+      ```
+
+  - 解压
+    ```bash
+    cat partout.z* > partout_re.zip
+    unzip partout_re.zip
+    ```
+
+- **tar** 
+
+  - 压缩，每个分卷最大为50MB。
+      ```bash
+      tar czvf out.tar.gz oxf.mat
+      split -d -b 50m out.tar.gz
+      ```
+
+  - 解压
+    ```bash
+    cat x* > out_x.tar.gz
+    tar zxvf out_x.tar.gz
+    ```
+
 ### `2020-08-08`
 > python `pickle`
 
