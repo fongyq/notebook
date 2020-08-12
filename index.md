@@ -36,10 +36,10 @@ homepage: true
 - **zip**
 
   - 压缩，每个分卷最大为50MB。
-      ```bash
-      zip out.zip oxf.mat
-      zip -s 50m out.zip --out partout
-      ```
+    ```bash
+    zip out.zip oxf.mat
+    zip -s 50m out.zip --out partout
+    ```
 
   - 解压
     ```bash
@@ -50,10 +50,10 @@ homepage: true
 - **tar** 
 
   - 压缩，每个分卷最大为50MB。
-      ```bash
-      tar czvf out.tar.gz oxf.mat
-      split -d -b 50m out.tar.gz
-      ```
+    ```bash
+    tar czvf out.tar.gz oxf.mat
+    split -d -b 50m out.tar.gz
+    ```
 
   - 解压
     ```bash
