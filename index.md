@@ -31,7 +31,7 @@ def partial(func, /, *args, **keywords):
     newfunc.keywords = keywords
     return newfunc
 ```
-`partial`的作用是部分使用某个函数，即冻结住某个函数的某些参数（*args, **keywords），让它们保证为某个值，并生成一个可调用的新函数对象（newfunc），这样就能够直接调用该函数对象，并且仅使用很少的参数（*fargs, **fkeywords）。
+`partial`的作用是部分使用某个函数，即冻结住某个函数的某些参数（\*args, **keywords），让它们保证为某个值，并生成一个可调用的新函数对象（newfunc），这样就能够直接调用该函数对象，并且仅使用很少的参数（\*fargs, **fkeywords）。
 ```python
 >>> def foo(a, b, key=True):                    
 ...     if key: return a*b                        
