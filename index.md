@@ -18,6 +18,32 @@ homepage: true
 
 # 学而时习之
 
+### `2020-08-19`
+> python偏函数：`funtools.partial`
+
+```python
+def partial(func, /, *args, **keywords):
+    def newfunc(*fargs, **fkeywords):
+        newkeywords = {**keywords, **fkeywords}
+        return func(*args, *fargs, **newkeywords)
+    newfunc.func = func
+    newfunc.args = args
+    newfunc.keywords = keywords
+    return newfunc
+```
+`partial`的作用是部分使用某个函数，即冻结住某个函数的某些参数（*args, **keywords），让它们保证为某个值，并生成一个可调用的新函数对象（newfunc），这样就能够直接调用该函数对象，并且仅使用很少的参数（*fargs, **fkeywords）。
+```python
+>>> def foo(a, b, key=True):                    
+...     if key: return a*b                        
+...     else: return -1*a*b                          
+...                                             
+>>> pa = functools.partial(foo, b=-1, key=True) 
+>>> list(map(pa, [1,2,3]))                      
+[-1, -2, -3]                                       
+```
+
+被`partial`装饰的函数配合`map`使用（比如tensorflow的`map_fn`），只需要给定单一输入（例中为参数a）。
+
 ### `2020-08-11`
 > 分卷压缩
 
@@ -280,7 +306,7 @@ fw
 ```
 
 ### `2020-02-27`
-> python缓存装饰器：`lru_cache`
+> python缓存装饰器：`functools.lru_cache`
 
 LRU，即Least Recently Used，最近最少使用，是一种常用的页面置换算法，选择最近最久未使用的页面予以淘汰。
 
