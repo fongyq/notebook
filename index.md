@@ -96,11 +96,11 @@ pickle模块实现了用于序列化和反序列化Python对象结构的二进�
 
 - `pickle.dump(obj, file, protocol=None, *, fix_imports=True, buffer_callback=None)`
 
-  将数据序列化后存入文件。
+  将数据序列化后存入文件（'wb'）。
 
 - `pickle.load(file, *, fix_imports=True, encoding="ASCII", errors="strict", buffers=None)`
 
-  将文件的内容反序列化读出，此时要让Python能够找到数据对应的类的定义。
+  将文件的内容反序列化读出（'rb'），此时要让Python能够找到数据对应的类的定义。
 
 - `pickle.dumps(obj, protocol=None, *, fix_imports=True, buffer_callback=None)`
 
