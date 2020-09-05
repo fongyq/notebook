@@ -18,6 +18,35 @@ homepage: true
 
 # 学而时习之
 
+### `2020-09-05`
+> vi/vim快捷键
+
+- 查找
+
+  - `/term` 向（光标）后查找，`?term` 向前查找
+    - `n` 下一个
+    - `N` 上一个
+
+  - `:%s/term//gn` 匹配个数
+
+- 复制粘贴
+
+  - `Y` 或 `yy` 复制整行
+  - `P` 粘贴至上行
+  - `p` 粘贴至下行
+
+- 删除
+
+  - `D` 从光标删除至行尾
+  - `dd` 剪切（删除）整行
+
+- 翻阅
+
+  - `Ctrl+F` 后翻
+  - `Ctrl+B` 前翻
+
+<img src="pictures/vi-vim-cheat-sheet.gif" width="640" />
+
 ### `2020-08-19`
 > python偏函数：`funtools.partial`
 
