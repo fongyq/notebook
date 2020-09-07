@@ -18,6 +18,51 @@ homepage: true
 
 # 学而时习之
 
+### `2020-09-07`
+> shell: `nohup` `&` `&&` `|` `||` `>` `>>`
+
+- `nohup ./run.sh`
+
+  - 提示：nohup: ignoring input and appending output to 'nohup.out'
+  - run.sh的输出不会出现在前台
+  - 响应SIGINT信号，Ctrl+C可以中止程序
+  - 免疫SIGHUP信号，关闭session（终端窗口）不会杀死程序
+  - 可以通过kill杀死程序：`killall run.sh`
+  - 查看进程：`ps -ef | grep 'run.sh'`
+
+- `./run.sh &`
+
+  - 后台运行，会显示进程号；默认输出到屏幕
+  - 通过`jobs`和`fg`切换到前台运行
+  - 免疫SIGINT信号，Ctrl+C不可以中止程序
+  - 响应SIGHUP信号，关闭session（终端窗口）可以杀死程序
+
+- `nohup ./run.sh &`
+  - 后台运行，会显示进程号，前台无输出
+  - 同时免疫SIGINT信号和SIGHUP信号
+  - 只能通过kill中止程序：`killall run.sh`
+
+- `&&`
+
+  - 串联指令，前一条命令执行成功，才执行后一条
+
+- `|`
+
+  - 管道，上一条命令的输出作为下一条的输入
+
+- `||`
+
+  - 上一条命令执行失败，才执行下一条
+
+- `>`
+
+  - stdout标准输出信息重定向，覆盖写
+
+- `>>`
+
+  - 重定向，追加写
+
+
 ### `2020-09-05`
 > vi/vim快捷键
 
