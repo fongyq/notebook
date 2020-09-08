@@ -90,7 +90,7 @@ homepage: true
   - `Ctrl+F` 后翻
   - `Ctrl+B` 前翻
 
-<img src="pictures/vi-vim-cheat-sheet.gif" width="100" />
+<img src="pictures/vi-vim-cheat-sheet.gif" width="500" />
 
 ### `2020-08-19`
 > python偏函数：`funtools.partial`
