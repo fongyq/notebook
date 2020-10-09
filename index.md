@@ -263,7 +263,7 @@ b'hello'
 
 - 缺点
 
-  新用户问题(New User Problem)，系统开始时推荐质量较差；新项目问题(New Item Problem)，质量取决于历史数据集；稀疏性问题（Sparsity）；系统扩展性问题（Scalability）。
+  新用户问题(New User Problem)，系统开始时推荐质量较差；新项目问题（New Item Problem），质量取决于历史数据集；稀疏性问题（Sparsity）；系统扩展性问题（Scalability）。
 
 ### `2020-06-01`
 > F12
