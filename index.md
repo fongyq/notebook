@@ -18,6 +18,25 @@ homepage: true
 
 # 学而时习之
 
+### `2020-10-26`
+> shell: `jobs`
+
+`ctrl+z`将前台正在执行的任务放到后台挂起（`Stopped`）。
+
+`jobs`查看linux中后台任务列表和任务状态：
+
+  - `jobs`命令执行的结果中，`[num]`是后台任务的编号，`+`表示最新的任务，`-`表示第二新的任务，其余没有符号。
+
+  - `jobs -l`可显示任务的进程号pid。
+
+  - 任务状态可以是`Running`、`Stopped`、`Terminated`。
+
+`fg %num`将挂起的任务转为前台执行。
+
+`bg %num`将挂起的任务从状态`Stopped`转为`Running`，仍在后台运行。
+
+`kill %num`或`kill pid`终止后台进程，状态变成`Terminated`。
+
 ### `2020-10-09`
 > shell: 重定向
 
