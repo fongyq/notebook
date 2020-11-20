@@ -19,6 +19,35 @@ homepage: true
 # 学而时习之
 
 ### `2020-10-26`
+> shell: 批量结束进程
+
+假如要结束`run_demo`指令产生的所有进程，方法如下：
+
+- `ps -ef | grep run_demo | grep -v grep | awk '{print $2}' | xargs kill -9`
+
+  - `ps -ef` 打印当前所有进程的信息
+
+  - `grep run_demo` 筛选目标指令相关进程的信息，以行为单位
+
+  - `grep -v grep` 反向选择，筛选字符串中不包括`grep`的行（`ps -ef`会打印出执行的命令）
+
+  - `awk '{print $2}'` 按默认的空格符分割行，打印分割后的第2个域，即进程号PID
+
+  - `xargs` 将上一个命令的标准输出转换成命令行参数
+
+  - `kill -9 PID` 强制结束进程
+
+- `ps -ef | grep run_demo | grep -v grep | awk '{print "kill -9 " $2}' | bash`
+
+- `killall run_demo`
+
+  - 按进程名结束进程
+
+  - 使用参数`-i`结束前先询问
+
+  - `killall run_*`结束所有以`run_`开头的进程
+
+### `2020-10-26`
 > shell: `jobs`
 
 `ctrl+z`将前台正在执行的任务放到后台挂起（`Stopped`）。
