@@ -18,6 +18,73 @@ homepage: true
 
 # 学而时习之
 
+### `2021-01-21`
+> python2: 编解码错误（UnicodeEncodeError，UnicodeDecodeError）
+
+python2的字符串有`str`和`unicode`两种类型：
+
+```
+s = '关关雎鸠' # type(s): str
+u = u'关关雎鸠' # type(u): unicode
+```
+
+类型转换：
+
+```
+print s.decode('utf-8')
+print u.encode('utf-8')
+```
+
+python2认为unicode才是字符的唯一内码，而字符集如gbk、utf8、ascii都是字符的二进制（字节）编码形式。encode：unicode -> gbk等，decode：gbk等 -> unicode。unicode需要**编码**成相应的字符串才能存储（文件）、输出（打印），字符串需要**解码**成unicode对象才能完成拼接（`s+u`）、格式化（`%s`）、求长（`len`）等操作；在进行同时包含`str`和`unicode`的运算时，python2将`str`解码成`unicode`再执行运算。
+
+python2本身不知道`str`类型的编码方式，只能使用`sys.getdefaultencoding()`方式来解码，一般默认为`ascii`，因此对中文不支持。修改方式（全局）：
+
+```
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+```
+
+print默认将字符打印到标准输出流`sys.stdout`，python2会按照`sys.stdout.encoding`给`unicode`编码之后输出（如果`sys.stdout.encoding='ascii'`，则输出中文会有问题），至于`str`对象，则直接输出（由操作系统解决）。如果python2代码是通过管道/子进程方式运行，`sys.stdout.encoding`会失效为`None`。
+
+使用`codecs`可以改变`sys.stdout.encoding`：
+
+```
+import codecs
+UTF8Writer = codecs.getwriter('utf-8')
+sys.stdout = UTF8Writer(sys.stdout)
+```
+
+但是`codecs`与默认的`sys.stdout`行为相反，它会把`str`对象使用`sys.getdefaultencoding()`方式来解码成`unicode`再输出。
+
+建议：永远使用`u`的形式定义中文字符串。
+
+另外，python的编译器是默认使用`ascii`解释代码文件，如果源程序中包含中文（字符串、注释等）就会报错。在代码文件的第一行加上`# -*- coding: utf-8 -*-`可指定编码类型以支持中文。
+
+### `2021-01-20`
+> 计算机字符集
+
+- ASCII
+  - 8个比特（1字节），0-255
+  - 为数字、标点、字母、一些符号编码
+- GB2312
+  - 对ASCII的中文扩展
+  - 两个ASCII码大于127的字符连在一起表示一个汉字
+  - 为ASCII中的字符都重新用两个字节编码，这就是“全角”字符
+  - 原本在127以下的叫“半角”字符
+- GBK
+  - 对GB2312的扩展
+  - 只要求第一个字符大于127，第二个不要求
+- Unicode
+  - 国际标准组织（ISO）整合了各个国家地区的编码，用16位（两个字节）表示所有字符
+    - 半角字符高位补0
+  - 一个字符就是两个字节
+  - Unicode是一个符号集（character set），没有规定二进制如何存储
+- UTF
+  - 满足计算机网络传输的编码格式
+  - utf-8：每次传输8比特数据，还有utf-16、utf-32
+  - utf是互联网最广泛使用的Unicode实现方式，是变长编码
+
 ### `2020-11-20`
 > shell: 批量结束进程
 
