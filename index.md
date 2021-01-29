@@ -23,14 +23,14 @@ homepage: true
 
 python2的字符串有`str`和`unicode`两种类型：
 
-```
+```python
 s = '关关雎鸠' # type(s): str
 u = u'关关雎鸠' # type(u): unicode
 ```
 
 类型转换：
 
-```
+```python
 print s.decode('utf-8')
 print u.encode('utf-8')
 ```
@@ -39,7 +39,7 @@ python2认为unicode才是字符的唯一内码，而字符集如gbk、utf8、as
 
 python2本身不知道`str`类型的编码方式，只能使用`sys.getdefaultencoding()`方式来解码，一般默认为`ascii`，因此对中文不支持。修改方式（全局）：
 
-```
+```python
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -49,7 +49,7 @@ print默认将字符打印到标准输出流`sys.stdout`，python2会按照`sys.
 
 使用`codecs`可以改变`sys.stdout.encoding`：
 
-```
+```python
 import codecs
 UTF8Writer = codecs.getwriter('utf-8')
 sys.stdout = UTF8Writer(sys.stdout)
