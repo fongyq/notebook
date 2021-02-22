@@ -18,6 +18,36 @@ homepage: true
 
 # 学而时习之
 
+### `2021-02-22`
+> python: 进制转换
+
+`bin`、`oct`、`hex`分别将整数转换成二进制、八进制、十六进制的字符串（`str`）。
+
+```python
+>>> bin(0x0f) 
+'0b1111'
+>>> bin(100)
+'0b1100100'
+>>> oct(100)
+'0o144'
+>>> hex(100)
+'0x64'
+```
+
+`int`可以将其他进制的整数/字符串转换成十进制整数。
+
+```python
+>>> 0xf
+15
+>>> int('0xf')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '0xf'
+>>> int('0xf', base=16) 
+15
+```
+
+
 ### `2021-01-21`
 > python2: 编解码错误（UnicodeEncodeError，UnicodeDecodeError）
 
