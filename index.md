@@ -18,6 +18,20 @@ homepage: true
 
 # 学而时习之
 
+### `2021-04-03`
+> c++: 表达式中的类型转换
+
+```cpp
+int a = 0x7fffffff; // INT_MAX
+int b = 2;
+double c = a * b; // signed int overflow
+```
+
+今天犯了一个低级错误，上例在计算 `a * b` 时会先将结果类型转成 `signed int`，从而产生溢出，正确做法是先对表达式中的操作数预先做强制类型转换：
+```cpp
+double c = double(a) * b; // or: (double)a * b
+```
+
 ### `2021-02-23`
 > python3: f-string
 
