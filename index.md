@@ -293,7 +293,11 @@ shell中常用的文件描述符（file descriptor）有：
     - `n` 下一个
     - `N` 上一个
 
-  - `:%s/term//gn` 匹配个数
+- 替换
+
+  - `:%s/old_term/new_term/g`
+
+  - `:%s/term//gn` 匹配个数（`n`表示预览指令效果，不会实际执行）
 
 - 复制粘贴
 
@@ -305,6 +309,7 @@ shell中常用的文件描述符（file descriptor）有：
 
   - `D` 从光标删除至行尾
   - `dd` 剪切（删除）整行
+  - `3dd` 向下删除3行
 
 - 翻阅
 
