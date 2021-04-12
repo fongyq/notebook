@@ -271,6 +271,7 @@ shell中常用的文件描述符（file descriptor）有：
   - 后台运行，会显示进程号，前台无输出
   - 同时免疫SIGINT信号和SIGHUP信号
   - 只能通过kill中止程序：`killall run.sh`
+  - 重定向输出：`nohup ./run.sh > log 2>&1 &`
 
 - `&&`
 
