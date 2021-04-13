@@ -317,6 +317,11 @@ shell中常用的文件描述符（file descriptor）有：
   - `Ctrl+F` 后翻
   - `Ctrl+B` 前翻
 
+- 行号
+
+  - `:set number` 显示行号
+  - `:set nonumber` 取消行号
+
 <img src="pictures/vi-vim-cheat-sheet.gif" width="500" />
 
 ### `2020-08-19`
