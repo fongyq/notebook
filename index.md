@@ -39,9 +39,9 @@ homepage: true
 
 #### 浮点数（floating point numbers）
 
-浮点数使用科学计数法存储数字（格式：符号位 + 指数 + 尾数，$N = M * 2^E$），小数点的位置根据指数的大小而浮动。
+浮点数使用科学计数法存储数字（格式：符号位 + 指数 + 尾数），小数点的位置根据指数的大小而浮动。
 
-<img src="pictures/float_point.image" width="250" />
+<img src="pictures/float_point.image" width="500" />
 
 - 符号位 S，就是表整个数字正负的符号，即0和1。
 
@@ -51,7 +51,7 @@ homepage: true
 
 IEEE 754 浮点数的一般格式如下： $N = (-1)^S \* 1.M \* 2^E$。
 
-<img src="pictures/float_double.image" width="250" />
+<img src="pictures/float_double.image" width="800" />
 
 float 和 double 的精度是由尾数的位数来决定的，$2^{-23} \approx 1.2 * 10^{-7} $，因此 float 的精度为6~7位，同理 double 的精度为15~16位。
 
@@ -77,6 +77,7 @@ float 和 double 的精度是由尾数的位数来决定的，$2^{-23} \approx 1
   - https://justjavac.com/codepuzzle/2012/11/02/codepuzzle-float-from-surprised-to-ponder.html
 
   - https://dev.mysql.com/doc/refman/5.6/en/fixed-point-types.html
+  
 </details>
 
 ### `2021-04-03`
