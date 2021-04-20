@@ -72,15 +72,15 @@ float 和 double 的精度是由尾数的位数来决定的，$2^{-23} \approx 1
 <details>
   <summary>参考资料</summary>
 
-  https://juejin.cn/post/6860445359936798734
+  <https://juejin.cn/post/6860445359936798734>
 
-  https://segmentfault.com/a/1190000024485146
+  <https://segmentfault.com/a/1190000024485146>
     
-  https://blog.csdn.net/sinat_27143551/article/details/103033589
+  <https://blog.csdn.net/sinat_27143551/article/details/103033589>
 
-  https://justjavac.com/codepuzzle/2012/11/02/codepuzzle-float-from-surprised-to-ponder.html
+  <https://justjavac.com/codepuzzle/2012/11/02/codepuzzle-float-from-surprised-to-ponder.html>
 
-  https://dev.mysql.com/doc/refman/5.6/en/fixed-point-types.html
+  <https://dev.mysql.com/doc/refman/5.6/en/fixed-point-types.html>
 
 </details>
 
