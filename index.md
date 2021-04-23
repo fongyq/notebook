@@ -19,6 +19,50 @@ homepage: true
 # 学而时习之
 
 ### `2021-04-20`
+> python: [`numpy.savez`](https://numpy.org/doc/stable/reference/generated/numpy.savez.html)
+
+```python
+numpy.savez(file, *args, **kwds)
+```
+
+`numpy.save` 保存一个数组到一个二进制的文件中，保存格式是 `.npy`；`numpy.savez` 同样是保存数组到一个二进制的文件中，但是厉害的是：它可以保存多个数组到同一个文件中，保存格式是 `.npz` ，它其实就是多个`numpy.save` 保存 `.npy` 之后再通过打包（未压缩）的方式把这些文件归到一个文件上。
+
+还可以给保存的数组自定义 key，方便导入和使用。
+
+```python
+>>> import numpy as np
+>>> x = np.arange(10)
+>>> y = np.sin(x)
+>>> np.savez('xy.npz', x=x, y=y)
+>>> xy = np.load('xy.npz')
+>>> _x = xy['x']
+>>> _y = xy['y']
+```
+
+相比之下，[h5py](https://stackoverflow.com/questions/27710245/is-there-an-analysis-speed-or-memory-usage-advantage-to-using-hdf5-for-large-arr) 有着更清晰的组织逻辑和读写效率。
+
+
+> python: [`numpy.vectorize`](https://numpy.org/doc/stable/reference/generated/numpy.vectorize.html)
+
+```python
+class numpy.vectorize(pyfunc, otypes=None, doc=None, excluded=None, cache=False, signature=None)
+```
+
+`numpy.vectorize` 定义了一个矢量类，输入是嵌套化的对象序列或者是 numpy 数组，
+输出是单个或元组的 numpy 数组；功能跟 map 很类似，将函数 `pyfunc` 作用在序列化的对象上；功能无特殊优化，本质上就是循环调用。
+
+```python
+>>> import numpy as np
+>>> def foo(x):
+...     return x**2
+...
+>>> vfoo = np.vectorize(foo)
+>>> va = [1,2,3,4]
+>>> vfoo(va)
+array([ 1,  4,  9, 16])
+```
+
+### `2021-04-20`
 > 定点数和浮点数
 
 数字计算机只能处理离散数据，二进制的位数直接决定了它能表示的离散数据个数，也决定了它所能表示的信息量，对于 $n$ 位二进制数，它可以表示的信息量为 $2^n$。
@@ -460,7 +504,7 @@ def partial(func, /, *args, **keywords):
     ```
 
 ### `2020-08-08`
-> python `pickle`
+> python [`pickle`](https://docs.python.org/3/library/pickle.html)
 
 pickle模块实现了用于序列化和反序列化Python对象结构的二进制协议。pickle模块只能在Python中使用，几乎所有的数据类型（列表、字典、集合、类等）都可以用pickle来序列化，以二进制的形式序列化后保存到文件中（.pkl），不能直接打开进行预览。
 
@@ -646,30 +690,34 @@ print(vars(User('fong', vars(info))))
 注意最后两行的差异，正确的初始化应该使用`vars`以匹配`**kwargs`字典参数。
 
 ### `2020-02-27`
-> python `h5py`
+> python [`h5py`](https://docs.h5py.org/en/stable/index.html)
 
-h5py文件是存放两类对象的容器：dataset和group。dataset是数据项；group是像文件夹一样的容器，类似于字典，有键和值；group中可以存放dataset或者其他group。
+h5py文件是存放两类对象的容器：dataset 和 group。dataset 是数据项；group 是像文件夹一样的容器，类似于字典，有键和值；group 中可以存放 dataset 或者其他 group 。
+
+dataset 和 group 还可以设置属性 attrs。
 
 ```python
-import numpy as np
-import h5py
-fw = h5py.File("test.hdf5", 'w')
-
-g = fw.create_group("grp")
-d = fw.create_dataset("dst", data=np.random.random([3,5]))
-
-g_sub = g.create_group("grp-sub")
-g["grp-dst"] = 5
-
-print(fw.keys())
-# <KeysViewHDF5 ['dst', 'grp']>
-print(fw['dst'][()]) ## value
-print(g['grp-sub'].name)
-# /grp/grp-sub
-print(g['grp-dst'].shape, g['grp-dst'].dtype, g["grp-dst"][()])
-# () int32 5
-
-fw.close()
+>>> import h5py
+>>> import numpy as np
+>>> fw = h5py.File("test.hdf5", 'w')
+>>> g = fw.create_group("grp")
+>>> d = fw.create_dataset("dst", data=np.random.random([3,5]))
+>>> g_sub = g.create_group("grp-sub")
+>>> g["grp-dst"] = 5
+>>> fw.keys()
+<KeysViewHDF5 ['dst', 'grp']>
+>>> fw['dst'][()]
+array([[0.71277767, 0.66396684, 0.01376168, 0.47915281, 0.5329076 ],
+       [0.38888691, 0.78488278, 0.22909742, 0.0611211 , 0.37825911],
+       [0.87039116, 0.15093241, 0.8224189 , 0.41678523, 0.5964381 ]])
+>>> fw['dst'][0,2:5] ## slice
+array([0.01376168, 0.47915281, 0.5329076 ])
+>>> g['grp-sub'].name, g['grp-dst'].shape, g['grp-dst'].dtype, g["grp-dst"][()]
+('/grp/grp-sub', (), dtype('int64'), 5)
+>>> fw.attrs['task'] = 'image retrieval'
+>>> list(fw.attrs.items())
+[('task', 'image retrieval')]
+>>> fw.close()
 ```
 
 ```
