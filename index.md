@@ -18,6 +18,25 @@ homepage: true
 
 # 学而时习之
 
+## `2021-05-04`
+> HTTP 和 HTTPS
+
+HTTP（HyperText Transfer Protocol，超文本传输协议）是一种应用层协议，提供发布和接收 HTML 页面的方法，被用于 Web 浏览器和网站服务器之间传递信息。
+
+HTTP 一般存在如下问题：
+- 请求信息明文传输，容易被窃听截取。
+- 数据的完整性未校验，容易被篡改。
+- 没有验证对方身份，存在冒充危险。
+
+HTTPS（Hypertext Transfer Protocol Secure，超文本传输安全协议）利用 SSL（Secure Socket Layer，安全套接字层）/TLS（Transport Layer Security，传输层安全） 来加密数据包，提供对网站服务器的身份认证，保护交换数据的隐私与完整性。HTTPS 并不是一项新的应用层协议，本质就是构建在 SSL/TLS 之上的 HTTP 协议。
+
+比较：
+- HTTP 页面响应速度比 HTTPS 快，主要是因为 HTTP 仅使用 TCP 三次握手建立连接，而 HTTPS 除了 TCP 连接之外，还要建立会话秘钥。
+- HTTP 和 HTTPS 使用的端口不一样，前者是 80，后者是 443。
+- HTTPS 要比 HTTP 更耗费服务器资源。
+
+<img src="pictures/https.png" width="360" />
+
 ## `2021-04-27`
 > RPC（Remote Procedure Call，远程过程调用）
 
@@ -57,8 +76,9 @@ numpy.savez(file, *args, **kwds)
 >>> _y = xy['y']
 ```
 
-相比之下，[h5py](https://stackoverflow.com/questions/27710245/is-there-an-analysis-speed-or-memory-usage-advantage-to-using-hdf5-for-large-arr) 有着更清晰的组织逻辑和读写效率。
+相比之下，[h5py](https://stackoverflow.com/questions/27710245/is-there-an-analysis-speed-or-memory-usage-advantage-to-using-hdf5-for-large-arr) 有着更清晰的组织逻辑和更高的读写效率。
 
+此外，`numpy.savetxt` 可以直接将数据保存为 txt 文本。
 
 > python: [`numpy.vectorize`](https://numpy.org/doc/stable/reference/generated/numpy.vectorize.html)
 
@@ -1169,6 +1189,10 @@ $$e = \sum_{n=0}^{+\infty} \frac{1}{n!} = \lim_{n \to +\infty} (1+\frac{1}{n})^n
 已矣乎！寓形宇内复几时？曷不委心任去留？胡为乎遑遑欲何之？富贵非吾愿，帝乡不可期。怀良辰以孤往，或植杖而耘耔。登东皋以舒啸，临清流而赋诗。聊乘化以归尽，乐夫天命复奚疑！
 
 # 行云流水
+
+## 2021
+
+`2021-01-01` 回学校了。
 
 ## 2020
 
