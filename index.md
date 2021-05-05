@@ -35,7 +35,7 @@ HTTPS（Hypertext Transfer Protocol Secure，超文本传输安全协议）利�
 - HTTP 和 HTTPS 使用的端口不一样，前者是 80，后者是 443。
 - HTTPS 要比 HTTP 更耗费服务器资源。
 
-<img src="pictures/https.png" width="360" />
+<img src="pictures/https.png" width="400" />
 
 ## `2021-04-27`
 > RPC（Remote Procedure Call，远程过程调用）
@@ -78,7 +78,7 @@ numpy.savez(file, *args, **kwds)
 
 相比之下，[h5py](https://stackoverflow.com/questions/27710245/is-there-an-analysis-speed-or-memory-usage-advantage-to-using-hdf5-for-large-arr) 有着更清晰的组织逻辑和更高的读写效率。
 
-此外，`numpy.savetxt` 可以直接将数据保存为 txt 文本。
+此外，[`numpy.savetxt`](https://numpy.org/doc/stable/reference/generated/numpy.savetxt.html) 可以直接将数据保存为 txt 文本。
 
 > python: [`numpy.vectorize`](https://numpy.org/doc/stable/reference/generated/numpy.vectorize.html)
 
@@ -395,6 +395,10 @@ shell中常用的文件描述符（file descriptor）有：
 
 `>> log.txt`表示重定向追加到文件log.txt，会保留文件之前的内容；`1>>`和`2>>`同理。
 
+**注** ：python 程序的 print 输出并不能及时打印到屏幕/文件，这是因为有输出缓存机制，加上参数 `-u` 可以不缓存直接输出避免延迟（force the stdout and stderr streams to be unbuffered）。
+```python
+python -u run.py
+```
 
 ## `2020-09-07`
 > shell: `nohup` `&` `&&` `|` `||`
@@ -419,7 +423,7 @@ shell中常用的文件描述符（file descriptor）有：
   - 后台运行，会显示进程号，前台无输出
   - 同时免疫SIGINT信号和SIGHUP信号
   - 只能通过kill中止程序：`killall run.sh`
-  - 重定向输出：`nohup ./run.sh > log 2>&1 &`
+  - 重定向输出：`nohup ./run.sh > log.txt 2>&1 &`
 
 - `&&`
 
