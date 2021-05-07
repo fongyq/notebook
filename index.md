@@ -474,6 +474,8 @@ python -u run.py
   - `:set number` 显示行号
   - `:set nonumber` 取消行号
 
+**注** ：`Ctrl+S` 阻断向终端输出，`Ctrl+Q` 恢复向终端输出。
+
 <img src="pictures/vi-vim-cheat-sheet.gif" width="500" />
 
 ## `2020-08-19`
