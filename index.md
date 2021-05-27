@@ -731,7 +731,7 @@ print(vars(User('fong', vars(info))))
 {'name': 'fong', 'info': {'age': 25, 'sex': 'man'}}
 ```
 
-注意最后两行的差异，正确的初始化应该使用`vars`以匹配`**kwargs`字典参数。
+注意最后两行的差异。
 
 ## `2020-02-27`
 > python [`h5py`](https://docs.h5py.org/en/stable/index.html)
